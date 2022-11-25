@@ -7,7 +7,8 @@ import { SerieService } from '../serie.service';
   styleUrls: ['./serie-list.component.css']
 })
 export class SerieListComponent implements OnInit {
-
+  selected: Boolean=false;
+  selectedSerie!: Serie;
   series: Array<Serie>=[];
 
   constructor(private serieService: SerieService) { }
@@ -21,6 +22,11 @@ export class SerieListComponent implements OnInit {
   }
   ngOnInit() {
     this.getSeries();
+  }
+
+  onSelected(serie:Serie):void{
+    this.selected=true;
+    this.selectedSerie=serie;
   }
 
 }
