@@ -1,24 +1,10 @@
 <div class="container-fluid">
-  <p class="h3 p-3">{{ serieDetail.name }}</p>
-  <div class="row">
-    <div class="col-2">
-      <div class="thumb">
-        <img
-          class="img-fluid"
-          src="{{ serieDetail.poster }}"
-          alt="{{ serieDetail.name }}"
-        />
-      </div>
-    </div>
-    <div class="col">
-      <dl>
-        <dt>Description</dt>
-        <dd>{{ serieDetail.description }}</dd>
-        <hr />
-        <dt>Wbepage</dt>
-        <dd>{{ serieDetail.webpage }}</dd>
-        <hr />
-      </dl>
-    </div>
+<div class="card" style="width: 28rem;">
+  <img class="card-img-top" src="{{serieDetail.poster}}" alt="{{serieDetail.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{serieDetail.name}}</h5>
+    <p class="card-text">{{serieDetail.description}}</p>
+    <a href="{{serieDetail.webpage}}" class="btn btn-primary">{{serieDetail.webpage}}</a>
   </div>
- </div>
+</div>
+</div>
