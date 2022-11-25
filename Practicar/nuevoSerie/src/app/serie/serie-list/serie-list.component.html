@@ -1,3 +1,10 @@
+<header class="fond">
+  <img class="inicio" src="https://www.shutterstock.com/image-vector/tv-icon-vector-flat-design-600w-570189409.jpg"/>
+  TV Series
+</header>
+
+
+
 <div *ngIf="selected">
   <app-serie-detail [serieDetail]="selectedSerie"></app-serie-detail>
 </div>
@@ -18,7 +25,7 @@
             <dd> {{serie.id}}</dd>
           </td>
           <td>
-            <dd (click)="onSelected(serie)">{{serie.name}}</dd>
+            <dd (click)="onSelected(serie)" >{{serie.name}}</dd>
           </td>
           <td>
             <dd>{{serie.channel}}</dd>
