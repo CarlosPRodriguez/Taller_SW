@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Serie } from '../Serie';
 import { SerieService } from '../serie.service';
+import { SerieDetail } from '../SerieDetail';
+
 @Component({
   selector: 'app-serie-list',
   templateUrl: './serie-list.component.html',
@@ -8,7 +10,14 @@ import { SerieService } from '../serie.service';
 })
 export class SerieListComponent implements OnInit {
 
-  series: Array<Serie>=[];
+  selected: Boolean= false;
+  selectedSerie!: SerieDetail;
+
+  onSelected(serie: SerieDetail):void {
+    this.selected=true;
+    this.selectedSerie=serie;
+  }
+  series: Array<SerieDetail>=[];
 
   constructor(private serieService: SerieService) { }
 
@@ -25,7 +34,7 @@ export class SerieListComponent implements OnInit {
   }
 }
 
-function getPromedioSeas(series: Serie[]): number {
+function getPromedioSeas(series: SerieDetail[]): number {
   var total: number = 0;
   var conteo: number = 0;
   series.forEach((serie) => total = total + serie.seasons);
